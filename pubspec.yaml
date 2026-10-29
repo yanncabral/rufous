@@ -7,10 +7,14 @@ environment:
   sdk: ^3.13.7
 
 dependencies:
+  dbus: ^0.8.0
   fluent_ui: ^4.17.0
   flutter:
     sdk: flutter
+  macos_ui: ^2.2.2
+  macos_window_utils: ^1.8.5
   win32: ^6.4.0
+  yaru: ^11.0.0
 
 dev_dependencies:
   flutter_test:
