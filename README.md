@@ -10,11 +10,21 @@ Estrutura gerada para Windows, macOS, Linux, Android, iOS e Web. A presença de 
 
 ## Desenvolvimento
 
-Instale o [Flutter estável](https://docs.flutter.dev/get-started/install) e os pré-requisitos da plataforma de destino. Confira o ambiente com `flutter doctor`.
+Instale o [FVM](https://fvm.app/documentation/getting-started/installation) e os pré-requisitos da plataforma de destino. O SDK Flutter é gerenciado pelo FVM, sem depender de uma instalação global do Flutter.
+
+A versão está fixada em `.fvmrc` (Flutter **3.47.9**, a stable mais recente na configuração inicial). O diretório `.fvm/` é local e não deve ser versionado.
 
 ```sh
-flutter pub get
-flutter run -d linux # ou windows, macos, chrome, ou o ID de um dispositivo
+fvm install
+fvm flutter doctor
+fvm flutter pub get
+fvm flutter run -d linux # ou windows, macos, chrome, ou o ID de um dispositivo
+```
+
+Para atualizar explicitamente para a stable mais recente e fixar a nova versão:
+
+```sh
+fvm use stable --pin
 ```
 
 Os builds de Windows, macOS e iOS exigem os respectivos sistemas operacionais e toolchains.
@@ -22,8 +32,8 @@ Os builds de Windows, macOS e iOS exigem os respectivos sistemas operacionais e 
 ## Verificação
 
 ```sh
-dart format --output=none --set-exit-if-changed lib test
-flutter analyze
-flutter test
-flutter build web
+fvm dart format --output=none --set-exit-if-changed lib test
+fvm flutter analyze
+fvm flutter test
+fvm flutter build web
 ```
